@@ -115,7 +115,8 @@ button{font-family:inherit;border:none;background:none;cursor:pointer}
   width:56px;height:56px;border-radius:10px;background:#0f172a;border:1px solid var(--line);
   display:grid;place-items:center;font-size:1.9rem;margin-bottom:0.75rem;overflow:hidden
 }
-.card .thumb img{width:100%;height:100%;object-fit:contain;padding:4px}
+.card .thumb.has-image{width:100%;height:auto;max-height:220px;padding:0.75rem}
+.card .thumb img{max-width:100%;max-height:200px;width:auto;height:auto;object-fit:contain;display:block;margin:0 auto}
 .card .badges{display:flex;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap}
 .badge{
   display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em
@@ -156,8 +157,10 @@ button{font-family:inherit;border:none;background:none;cursor:pointer}
 .modal-close:hover{color:var(--text)}
 .modal-body{padding:1.25rem;overflow-y:auto}
 .res-summary{display:flex;gap:0.9rem;align-items:flex-start;margin-bottom:1rem}
+.res-summary.has-image{flex-direction:column;align-items:stretch}
 .res-thumb{width:64px;height:64px;border-radius:10px;background:#0f172a;border:1px solid var(--line);display:grid;place-items:center;font-size:1.8rem;flex-shrink:0;overflow:hidden}
-.res-thumb img{width:100%;height:100%;object-fit:contain;padding:4px}
+.res-thumb.has-image{width:100%;height:auto;max-height:260px;padding:0.75rem}
+.res-thumb img{max-width:100%;max-height:240px;width:auto;height:auto;object-fit:contain;display:block;margin:0 auto}
 .res-info{display:flex;flex-direction:column;justify-content:center}
 .res-price{font-size:1.25rem;font-weight:700}
 .res-stock{font-size:0.8rem;color:var(--text-dim);margin-top:0.15rem}
@@ -727,11 +730,11 @@ function renderProducts(){
     const compatibleHtml = (p.compatible || []).map(m => `<span class="badge sae">${escapeHtml(m)}</span>`).join('');
     const emojiFallback = p.category === 'aceite' ? '🛢️' : p.category === 'cadena' ? '⛓️' : '🔧';
     const thumbHtml = p.image
-      ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.brand)}" loading="lazy" onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${emojiFallback}'}));">`
+      ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.brand)}" loading="lazy" onerror="this.onerror=null;this.closest('.thumb').classList.remove('has-image');this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${emojiFallback}'}));">`
       : emojiFallback;
     grid.innerHTML += `
       <article class="card" data-id="${escapeHtml(p.id)}">
-        <div class="thumb">${thumbHtml}</div>
+        <div class="thumb${p.image ? ' has-image' : ''}">${thumbHtml}</div>
         <div class="card-body">
           <div class="badges">
             <span class="badge cat">${escapeHtml(catLabel)}</span>
@@ -769,10 +772,15 @@ function openReserve(id){
   document.getElementById('resProdId').value = p.id;
   document.getElementById('resModalTitle').textContent = `Reservar · ${p.name}`;
   const resThumbEl = document.getElementById('resThumb');
+  const resSummaryEl = resThumbEl.closest('.res-summary');
   const resEmoji = p.category === 'aceite' ? '🛢️' : p.category === 'cadena' ? '⛓️' : '🔧';
   if (p.image) {
-    resThumbEl.innerHTML = `<img src="${p.image}" alt="${p.brand}" onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${resEmoji}'}));">`;
+    resThumbEl.classList.add('has-image');
+    resSummaryEl.classList.add('has-image');
+    resThumbEl.innerHTML = `<img src="${p.image}" alt="${p.brand}" onerror="this.onerror=null;this.closest('.res-thumb').classList.remove('has-image');this.closest('.res-summary').classList.remove('has-image');this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${resEmoji}'}));">`;
   } else {
+    resThumbEl.classList.remove('has-image');
+    resSummaryEl.classList.remove('has-image');
     resThumbEl.textContent = resEmoji;
   }
   document.getElementById('resPrice').textContent = fmtMoney(p.price);
