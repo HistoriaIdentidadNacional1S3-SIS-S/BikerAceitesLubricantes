@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotoOil Managua — Aceites para Motocicletas · Reserva y recoge en tienda</title>
+<meta name="description" content="Catálogo de aceites y lubricantes para motocicletas en Managua, Nicaragua. Reserva tu aceite en línea y recógelo en nuestra tienda. Paga al recoger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1120;
+  --panel:#162135;
+  --panel-hover:#1f2a44;
+  --text:#f1f5f9;
+  --text-dim:#94a3b8;
+  --line:#334155;
+  --orange:#fb923c;
+  --orange-dark:#c2410c;
+  --amber:#fbbf24;
+  --red:#f87171;
+  --red-dark:#dc2626;
+  --green:#4ade80;
+  --green-dark:#15803d;
+  --shadow:0 10px 25px -5px rgba(0,0,0,0.45);
+  --maxw:1200px;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.55;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column
+}
+a{color:var(--orange);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+.container{width:100%;max-width:var(--maxw);padding:0 1.5rem;margin:0 auto}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.site-header{
+  background:linear-gradient(180deg,#080c18 0%,#0b1120 100%);
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:100
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem}
+.logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:1.35rem;letter-spacing:-0.02em}
+.logo span{color:var(--orange)}
+.contact-wrap{display:flex;align-items:center;gap:1rem}
+.tel{color:var(--text-dim);font-size:0.9rem;display:flex;align-items:center;gap:0.4rem}
+.tel:hover{color:var(--text);text-decoration:none}
+.btn-admin{font-size:0.85rem;padding:0.45rem 0.9rem;border:1px solid var(--line);border-radius:8px;color:var(--text-dim)}
+.btn-admin:hover{border-color:var(--orange);color:var(--orange)}
+.hero{padding:4.5rem 1rem 3rem;background:radial-gradient(1200px 600px at 60% -10%, #1c2a4a 0%, transparent 60%), var(--bg);border-bottom:1px solid var(--line);text-align:center}
+.hero h1{font-size:2.2rem;line-height:1.15;margin-bottom:0.75rem}
+.hero h1 .emoji{font-size:1.6rem}
+.hero p{font-size:1.1rem;color:var(--text-dim);max-width:640px;margin:0 auto 1.5rem}
+.search-wrap{max-width:560px;margin:0 auto 1.5rem;display:flex;gap:0.5rem;position:relative}
+.search-wrap input{
+  flex:1;padding:0.9rem 1rem;border-radius:10px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:1rem
+}
+.search-wrap input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(251,146,60,0.15)}
+.search-wrap button{padding:0.9rem 1.4rem;border-radius:10px;background:var(--orange);color:#0b1120;font-weight:700;font-size:1rem}
+.search-wrap button:hover{background:#fdba74}
+.hero-stats{display:flex;gap:1.2rem;justify-content:center;font-size:0.85rem;color:var(--text-dim);flex-wrap:wrap}
+.hero-stats strong{color:var(--text)}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.95rem;
+  background:var(--orange);color:#0b1120
+}
+.btn:hover{background:#fdba74}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:0.55;cursor:not-allowed}
+.btn-outline{
+  border:1px solid var(--line);color:var(--text)
+}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange)}
+.btn-primary{background:var(--orange);color:#0b1120}
+.btn-primary:hover{background:#fdba74}
+.btn-success{background:var(--green-dark);color:#fff}
+.btn-success:hover{background:#16a34a}
+.btn-danger{background:var(--red-dark);color:#fff}
+.btn-danger:hover{background:#b91c1c}
+.btn-sm{padding:0.5rem 0.9rem;font-size:0.85rem}
+.section{padding:3rem 1rem}
+.section-head{text-align:center;margin-bottom:2.5rem}
+.section-head h2{font-size:1.6rem;margin-bottom:0.5rem}
+.section-head p{color:var(--text-dim);font-size:1rem}
+.filters{background:var(--panel);border-bottom:1px solid var(--line)}
+.filter-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;padding:1.25rem 0}
+.filter-group{display:flex;flex-direction:column;gap:0.4rem}
+.filter-group label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);font-weight:600}
+.filter-group select{
+  padding:0.65rem 0.9rem;border-radius:8px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:0.95rem;min-width:170px
+}
+.filter-group select:focus{outline:none;border-color:var(--orange)}
+.catalog-header{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:1.5rem}
+.catalog-header .subtitle{color:var(--text-dim);font-size:0.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:1.25rem;
+  display:flex;flex-direction:column;
+  transition:transform .18s,border-color .18s,box-shadow .18s
+}
+.card:hover{transform:translateY(-4px);border-color:var(--panel-hover);box-shadow:var(--shadow)}
+.card .thumb{
+  width:56px;height:56px;border-radius:10px;background:#0f172a;border:1px solid var(--line);
+  display:grid;place-items:center;font-size:1.9rem;margin-bottom:0.75rem
+}
+.card .badges{display:flex;gap:0.5rem;margin-bottom:0.6rem;flex-wrap:wrap}
+.badge{
+  display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em
+}
+.badge.cat{background:#1e3a5f;color:#93c5fd}
+.badge.sae{background:#2d2d2d;color:var(--amber)}
+.card h3{font-size:1.05rem;margin-bottom:0.25rem;line-height:1.25}
+.card p.brand{font-size:0.85rem;color:var(--text-dim);margin-bottom:0.7rem}
+.card p.compatible{font-size:0.8rem;color:var(--text-dim);margin-bottom:0.65rem}
+.card .specs{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.75rem}
+.card .specs span{
+  font-size:0.75rem;padding:0.35rem 0.6rem;border-radius:8px;background:#0f172a;border:1px solid var(--line);color:var(--text-dim)
+}
+.card .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.card .price{font-size:1.15rem;font-weight:700}
+.card .stock-badge{font-size:0.75rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:8px}
+.stock-ok{background:#064e3b;color:#6ee7b7}
+.stock-low{background:#7c2d12;color:#fcd34d}
+.stock-out{background:#450a0a;color:#fca5a5}
+.btn-reserve{width:100%;padding:0.75rem;border-radius:8px;font-weight:700;background:var(--orange-dark);color:#fff}
+.btn-reserve:hover{background:#ea580c}
+.btn-reserve:disabled{background:#334155;color:#64748b}
+.card .note{font-size:0.72rem;color:var(--text-dim);margin-top:0.6rem}
+.card .suggestion{font-size:0.72rem;color:var(--amber);margin-top:0.5rem;padding-top:0.5rem;border-top:1px dashed var(--line)}
+.empty{grid-column:1/-1;text-align:center;padding:3rem;color:var(--text-dim)}
+.howitworks{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.step{padding:1.5rem;border:1px dashed var(--line);border-radius:var(--radius);text-align:center}
+.step .num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--orange);color:#0b1120;font-weight:700;margin-bottom:0.75rem}
+.step h4{font-size:1rem;margin-bottom:0.4rem}
+.step p{font-size:0.85rem;color:var(--text-dim)}
+.modal{position:fixed;inset:0;z-index:200;display:none}
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,14,0.7);backdrop-filter:blur(4px)}
+.modal-panel{position:fixed;top:12%;left:50%;transform:translate(-50%,0);width:92%;max-width:460px;max-height:85vh;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.modal-panel header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--line);background:var(--panel)}
+.modal-panel header h2{font-size:1.15rem}
+.modal-close{font-size:1.4rem;color:var(--text-dim);line-height:1}
+.modal-close:hover{color:var(--text)}
+.modal-body{padding:1.25rem;overflow-y:auto}
+.res-summary{display:flex;gap:0.9rem;align-items:flex-start;margin-bottom:1rem}
+.res-thumb{width:64px;height:64px;border-radius:10px;background:#0f172a;border:1px solid var(--line);display:grid;place-items:center;font-size:1.8rem;flex-shrink:0}
+.res-info{display:flex;flex-direction:column;justify-content:center}
+.res-price{font-size:1.25rem;font-weight:700}
+.res-stock{font-size:0.8rem;color:var(--text-dim);margin-top:0.15rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);font-weight:600;margin-bottom:0.4rem}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:0.7rem 0.9rem;border-radius:8px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:0.95rem
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--orange)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-note{font-size:0.78rem;color:var(--text-dim);margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid var(--line)}
+.action-row{display:flex;gap:0.75rem;margin-top:1rem}
+.action-row .btn{flex:1;justify-content:center}
+.confirm-modal .modal-panel{max-width:420px}
+.confirm-content{text-align:center;padding:1.25rem}
+.confirm-content .big{font-size:2rem;font-weight:800;color:var(--green);margin:0.5rem 0}
+.confirm-content h2{margin-bottom:0.5rem}
+.confirm-card{background:#0f172a;border:1px solid var(--line);border-radius:var(--radius);padding:1rem;margin:1rem 0}
+.confirm-row{display:flex;justify-content:space-between;font-size:0.9rem;padding:0.5rem 0;border-bottom:1px solid var(--line)}
+.confirm-row:last-child{border:none}
+.confirm-row .val{font-weight:700;color:var(--orange)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:0.88rem}
+th{text-align:left;color:var(--text-dim);font-size:0.7rem;text-transform:uppercase;padding:0.75rem;border-bottom:1px solid var(--line)}
+td{padding:0.75rem;border-bottom:1px solid var(--line)}
+tr:hover td{background:#0f172a}
+.status{display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.6rem;border-radius:999px;font-size:0.7rem;font-weight:700;text-transform:uppercase}
+.status.pendiente{background:#7c2d12;color:#fcd34d}
+.status.listo{background:#1e3a5f;color:#93c5fd}
+.status.recogido{background:#064e3b;color:#6ee7b7}
+.status.cancelado{background:#334155;color:#94a3b8}
+.admin-section{background:var(--panel);border-top:1px solid var(--line)}
+.admin-login{max-width:360px;margin:2rem auto;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.admin-login h3{margin-bottom:1rem}
+.admin-dashboard{margin-top:2rem}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+.stat .big{font-size:1.5rem;font-weight:700;color:var(--orange)}
+.stat .lab{font-size:0.75rem;color:var(--text-dim)}
+.restock{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:flex-end;margin-bottom:1.5rem}
+.restock select{padding:0.7rem 0.9rem;border-radius:8px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:0.95rem}
+.restock input{padding:0.7rem;border-radius:8px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:0.95rem;width:110px}
+.site-footer{border-top:1px solid var(--line);padding:2.5rem 1rem;color:var(--text-dim);font-size:0.85rem}
+.footer-inner{display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
+.footer-inner p{margin:0.2rem 0}
+@media (max-width:600px){
+  .hero h1{font-size:1.7rem}
+  .search-wrap{flex-direction:column}
+  .filter-row{justify-content:center}
+  .modal-panel{top:8%;width:94%}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="logo" href="#">M<span>otoOil</span> Managua</a>
+    <div class="contact-wrap">
+      <a class="tel" href="tel:+50588880000" aria-label="Llamar a la tienda">📞 +505 8888 0000</a>
+      <a class="btn-admin" href="#" id="adminLink" aria-label="Panel de administrador">Administrador</a>
+    </div>
+  </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <h1>Aceites para tu moto en Managua <span class="emoji">🏍️</span></h1>
+    <p>Busca el aceite de tu motocicleta, <strong>reserva en línea</strong> y recógelo en nuestra tienda. <strong>Pagas al recoger</strong> — sin pagos por internet.</p>
+    <div class="search-wrap">
+      <input type="search" id="searchInput" placeholder="Busca por moto, marca o tipo de aceite (ej. Gixxer, 10W-40, Pulsar, CB300)..." autocomplete="off">
+      <button type="button" id="btnSearch">Buscar</button>
+    </div>
+    <div class="hero-stats">
+      <span><strong>📍 Managua, Nicaragua</strong></span>
+      <span><strong>🕒 Lun–Sáb 8:00–18:00 · Dom 9:00–13:00</strong></span>
+      <span><strong>💵 Precios en C$ (córdobas)</strong></span>
+    </div>
+  </div>
+</section>
+<section class="filters">
+  <div class="container">
+    <div class="filter-row" id="filterRow">
+      <div class="filter-group">
+        <label for="filterBrand">Marca de aceite</label>
+        <select id="filterBrand"><option>Todas las marcas</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="filterSAE">Grado SAE</label>
+        <select id="filterSAE"><option>Todos los grados</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="filterStock">Disponibilidad</label>
+        <select id="filterStock"><option>Todos</option><option>Solo disponibles</option><option>Ver agotados</option></select>
+      </div>
+      <button type="button" class="btn btn-outline btn-sm" id="btnResetFilters">Limpiar filtros</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="catalog-header">
+      <h2>Catálogo de productos <span id="catalogBadge"></span></h2>
+      <p class="subtitle" id="catalogCount">Productos disponibles para reserva</p>
+    </div>
+    <div class="grid" id="productGrid"></div>
+    <div class="empty" id="emptyState" style="display:none">
+      <p>No se encontraron productos con esos filtros.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section howitworks">
+  <div class="container">
+    <div class="section-head">
+      <h2>Cómo funciona</h2>
+      <p>Reserva en 3 pasos y recoge cuando te convenga</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Busca tu aceite</h4>
+        <p>Filtra por tu moto (Gixxer, Pulsar, CB300, YZF-R3…) y confirma que tiene stock.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Reserva en línea</h4>
+        <p>Deja tus datos y elige día y hora de recogida. Tu producto se guarda para ti.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Recoge y paga</h4>
+        <p>Pasa por la tienda en Managua, paga en efectivo o transferencia y llévatelo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal: reserva -->
+<div class="modal" id="reserveModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="backdropReserve"></div>
+  <div class="modal-panel">
+    <header>
+      <h2 id="resModalTitle">Reservar producto</h2>
+      <button type="button" class="modal-close" id="closeReserve" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="modal-body">
+      <div class="res-summary">
+        <div class="res-thumb" id="resThumb">🛢️</div>
+        <div class="res-info">
+          <div class="res-price" id="resPrice">C$ 0</div>
+          <div class="res-stock" id="resStockBadge">Stock disponible: —</div>
+        </div>
+      </div>
+      <form id="reserveForm" novalidate>
+        <input type="hidden" id="resProdId">
+        <div class="form-group">
+          <label for="resQty">Cantidad (botellas/unidades)</label>
+          <input type="number" id="resQty" min="1" max="1" value="1" required>
+        </div>
+        <div class="form-group">
+          <label for="resName">Nombre completo</label>
+          <input type="text" id="resName" placeholder="Ej. José Pérez" required>
+        </div>
+        <div class="form-group">
+          <label for="resPhone">Teléfono de contacto</label>
+          <input type="tel" id="resPhone" placeholder="Ej. 8888-1234" required>
+        </div>
+        <div class="form-group">
+          <label for="resEmail">Correo electrónico (opcional)</label>
+          <input type="email" id="resEmail" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="form-group">
+          <label for="resDate">Fecha de recogida</label>
+          <input type="date" id="resDate" required>
+        </div>
+        <div class="form-group">
+          <label for="resTime">Hora aproximada de recogida</label>
+          <input type="time" id="resTime" value="10:00" required>
+        </div>
+        <div class="form-group">
+          <label for="resNotes">Notas (opcional)</label>
+          <textarea id="resNotes" placeholder="Ej. pasar en la tarde, traer moto para revisar nivel…"></textarea>
+        </div>
+        <div class="form-note">💡 No se requiere pago en línea. Pagas en efectivo o transferencia al recoger en la tienda de Managua.</div>
+        <div class="action-row" style="flex-direction:column">
+          <button type="submit" class="btn btn-primary" id="btnReserveConfirm">Confirmar reserva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal: confirmación -->
+<div class="modal confirm-modal" id="confirmModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="backdropConfirm"></div>
+  <div class="modal-panel">
+    <header>
+      <h2 id="confTitle">¡Reserva confirmada!</h2>
+      <button type="button" class="modal-close" id="closeConfirm" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="modal-body">
+      <div class="confirm-content">
+        <div class="big" id="confCode">MO-000000</div>
+        <p>Tu producto está guardado. Presenta este código en la tienda.</p>
+        <div class="confirm-card" id="confDetails"></div>
+        <div class="action-row" style="flex-direction:column">
+          <button type="button" class="btn btn-primary" id="btnConfMyReservations">Ver mis reservas</button>
+          <button type="button" class="btn btn-outline" id="btnConfContinue">Seguir comprando</button>
+        </div>
+        <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-dim)">Horario de recogida: Lun–Sáb 8:00–18:00 · Dom 9:00–13:00</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección: mis reservas -->
+<section class="section" id="myReservationsSection" style="display:none">
+  <div class="container">
+    <div class="catalog-header">
+      <h2>Mis reservas</h2>
+      <p class="subtitle">Consulta el estado de tus reservas activas</p>
+    </div>
+    <div class="table-wrap">
+      <table id="resTable">
+        <thead>
+          <tr><th>Código</th><th>Producto</th><th>Cantidad</th><th>Total</th><th>Recogida</th><th>Estado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="resTableBody"></tbody>
+      </table>
+    </div>
+    <p id="noReservations" style="color:var(--text-dim);text-align:center;padding:2rem;display:none">No tienes reservas registradas.</p>
+  </div>
+</section>
+<!-- Sección: administrador -->
+<section class="section admin-section" id="adminSection" style="display:none">
+  <div class="container">
+    <div class="catalog-header">
+      <h2>Panel de administrador</h2>
+      <p class="subtitle">Gestión de stock y reservas de la tienda</p>
+    </div>
+    <div id="adminLogin">
+      <div class="admin-login">
+        <h3>Acceso de administrador</h3>
+        <div class="form-group">
+          <label for="adminPin">PIN de acceso</label>
+          <input type="password" id="adminPin" placeholder="········">
+        </div>
+        <button type="button" class="btn btn-primary" id="btnAdminLogin">Ingresar</button>
+        <p id="adminError" style="color:var(--red);font-size:0.8rem;margin-top:0.5rem;display:none">PIN incorrecto</p>
+      </div>
+    </div>
+    <div id="adminDashboard" style="display:none">
+      <div class="admin-grid">
+        <div class="stat"><div class="big" id="statTotalRes">0</div><div class="lab">Reservas totales</div></div>
+        <div class="stat"><div class="big" id="statPending">0</div><div class="lab">Pendientes / listas</div></div>
+        <div class="stat"><div class="big" id="statPicked">0</div><div class="lab">Recogidas</div></div>
+        <div class="stat"><div class="big" id="statLowStock">0</div><div class="lab">Productos sin stock</div></div>
+      </div>
+      <div class="restock">
+        <label style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.06em;font-weight:600">Reabastecer producto</label>
+        <select id="restockProduct"></select>
+        <input type="number" id="restockQty" min="1" placeholder="Unidades">
+        <button type="button" class="btn btn-success btn-sm" id="btnRestock">Agregar stock</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Producto</th><th>Stock inicial</th><th>Disponible</th><th>Precio venta</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="stockTableBody"></tbody>
+        </table>
+      </div>
+      <div class="table-wrap" style="margin-top:1.5rem">
+        <table>
+          <thead>
+            <tr><th>Código</th><th>Cliente</th><th>Producto</th><th>Recogida</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="adminResTableBody"></tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem"><button type="button" class="btn btn-outline btn-sm" id="btnAdminLogout">Cerrar sesión admin</button></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <div><strong>MotoOil Managua</strong> — Aceites y lubricantes para motocicletas</div>
+    <div>📍 Managua, Nicaragua &nbsp;·&nbsp; 📞 +505 8888 0000 &nbsp;·&nbsp; WhatsApp <a href="https://wa.me/50588880000" target="_blank">wa.me/50588880000</a></div>
+    <div>🕒 Lun–Sáb 8:00–18:00 · Dom 9:00–13:00</div>
+    <div style="font-size:0.75rem;color:#475569">Inventario base: archivo de aceites para motocicletas (Nicaragua). Precios y stock son escenarios editables del sistema, no cotizaciones verificadas. Los volúmenes de cambio son orientativos — consulta el manual de tu moto.</div>
+  </div>
+</footer>
+<script id="app-js">
+/* ========================================
+   MotoOil Managua — Catálogo y reservas online
+   Sin pagos en línea: se reserva y se paga al recoger en tienda.
+   Datos de inventario base: archivo de aceites para motocicletas (Nicaragua).
+   ======================================== */
+
+const STORE = {
+  name: 'MotoOil Managua',
+  address: 'Managua, Nicaragua',
+  phone: '+505 8888 0000',
+  whatsapp: '50588880000',
+  hours: 'Lun–Sáb 8:00 – 18:00 · Dom 9:00 – 13:00',
+  currency: 'C$'
+};
+const ADMIN_PIN = 'moto2024';
+
+/* Inventario base (hoja 1 del Excel: modelos de moto + hoja 2: stock/precios) */
+const PRODUCTS = [
+  {
+    id: 'p1', category: 'aceite', sae: '10W-40', jaso: 'MA / MA2', api: 'SG o superior',
+    name: 'Aceite sintético 10W-40 MA/MA2 — 1 L',
+    brand: 'Motul 7100', presentation: 'Botella 1 L',
+    stock: 6, price: 650, cost: 450, liters: 'Según modelo (1,0 – 2,1 L)',
+    compatible: ['Suzuki Gixxer 150/160 (naked y SF)', 'Suzuki Gixxer 250 (naked y SF)', 'Yamaha FZ25 / XTZ 250', 'Yamaha YZF-R3', 'Yamaha MT-03 (321 cc)'],
+    warning: 'Volúmenes orientativos; confirma el litraje con el manual de tu moto.',
+    source: 'Manuales de fabricante y tablas Yamalube / Suzuki ECSTAR.'
+  },
+  {
+    id: 'p2', category: 'aceite', sae: '10W-40', jaso: 'MA / MA2', api: 'SG o superior',
+    name: 'Aceite sintético 10W-40 MA/MA2 — 1 L',
+    brand: 'Shell Advance Ultra', presentation: 'Botella 1 L',
+    stock: 6, price: 650, cost: 450, liters: 'Según modelo (1,0 – 2,1 L)',
+    compatible: ['Suzuki Gixxer 150/160 (naked y SF)', 'Suzuki Gixxer 250 (naked y SF)', 'Yamaha FZ25 / XTZ 250', 'Yamaha YZF-R3', 'Yamaha MT-03 (321 cc)'],
+    warning: 'Volúmenes orientativos; confirma el litraje con el manual de tu moto.',
+    source: 'Manuales de fabricante y tablas Yamalube / Suzuki ECSTAR.'
+  },
+  {
+    id: 'p3', category: 'aceite', sae: '10W-40', jaso: 'MA / MA2', api: 'SG o superior',
+    name: 'Aceite semisintético 10W-40 MA/MA2 — 1 L',
+    brand: 'Motul 5100', presentation: 'Botella 1 L',
+    stock: 6, price: 390, cost: 270, liters: 'Según modelo',
+    compatible: ['Motos de calle y uso mixto que requieran JASO MA/MA2'],
+    warning: 'Opción de gama de entrada, precio más accesible.',
+    source: 'Especificaciones de fabricante.'
+  },
+  {
+    id: 'p4', category: 'aceite', sae: '10W-40', jaso: 'MA / MA2', api: 'SG o superior',
+    name: 'Aceite semisintético 10W-40 MA/MA2 — 1 L',
+    brand: 'Shell Advance AX7', presentation: 'Botella 1 L',
+    stock: 6, price: 390, cost: 270, liters: 'Según modelo',
+    compatible: ['Motos de calle y uso mixto que requieran JASO MA/MA2'],
+    warning: 'Opción de gama de entrada, precio más accesible.',
+    source: 'Especificaciones de fabricante.'
+  },
+  {
+    id: 'p5', category: 'aceite', sae: '10W-30', jaso: 'MA / MA2', api: 'SG o superior',
+    name: 'Aceite 10W-30 MA/MA2 — 1 L',
+    brand: 'Marca por confirmar', presentation: 'Botella 1 L',
+    stock: 4, price: 500, cost: 350, liters: '1,5 L con filtro (CB300)',
+    compatible: ['Honda CB300F (2015-2016)', 'Honda CB300R (2021)'],
+    warning: 'Confirma el año y volumen con el manual de tu Honda.',
+    suggestion: 'Marca aún por confirmar con el proveedor; cumple la especificación 10W-30 MA/MA2.',
+    source: 'Manuales Honda CB300F / CB300R.'
+  },
+  {
+    id: 'p6', category: 'aceite', sae: '20W-50', jaso: 'MA2', api: 'SN',
+    name: 'Aceite para moto 20W-50 MA2 API SN — 1 L',
+    brand: 'Bajaj DTS-i', presentation: 'Botella 1 L',
+    stock: 0, price: 440, cost: 300, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG', 'Bajaj Pulsar NS160 UG'],
+    warning: 'Stock agotado. Disponible por encargo — contáctanos por WhatsApp.',
+    suggestion: 'También existe un equivalente premium con la misma especificación, disponible bajo pedido.',
+    source: 'Manuales Bajaj Pulsar NS200 / NS160.'
+  },
+  {
+    id: 'p7', category: 'aceite', sae: '10W-50', jaso: 'MA2', api: 'SN (20W-50)',
+    name: 'Aceite sintético 10W-50 MA2 — 1 L',
+    brand: 'Bajaj DTS-i', presentation: 'Botella 1 L',
+    stock: 0, price: 690, cost: 490, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG (alternativa según manual)'],
+    warning: 'Stock agotado. Confirma especificación con el manual local.',
+    suggestion: 'Verifica la especificación exacta impresa en la etiqueta del envase.',
+    source: 'Manual Bajaj Pulsar NS200.'
+  },
+  {
+    id: 'p8', category: 'aceite', sae: '10W-50', jaso: 'MA2', api: 'SN (20W-50)',
+    name: 'Aceite sintético 10W-50 MA2 — 1 L',
+    brand: 'Motul 7100', presentation: 'Botella 1 L',
+    stock: 0, price: 690, cost: 490, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG (alternativa según manual)'],
+    warning: 'Stock agotado. Confirma especificación con el manual local.',
+    suggestion: 'Verifica la especificación exacta impresa en la etiqueta del envase.',
+    source: 'Manual Bajaj Pulsar NS200.'
+  },
+  {
+    id: 'p9', category: 'cadena', sae: '—', jaso: '—', api: '—',
+    name: 'Lubricante para cadena — Spray 400 ml',
+    brand: 'Motul C2', presentation: 'Spray',
+    stock: 5, price: 370, cost: 240, liters: '400 ml',
+    compatible: ['Todas las motocicletas'],
+    warning: 'Ideal para venta cruzada con el cambio de aceite.',
+    suggestion: 'También hay un equivalente genérico disponible bajo pedido.',
+    source: 'Catálogo Motul.'
+  },
+  {
+    id: 'p10', category: 'cadena', sae: '—', jaso: '—', api: '—',
+    name: 'Limpiador de cadena — Spray 400 ml',
+    brand: 'Motul C1', presentation: 'Spray',
+    stock: 3, price: 370, cost: 240, liters: '400 ml',
+    compatible: ['Todas las motocicletas'],
+    warning: 'Limpia la cadena antes de lubricar.',
+    suggestion: 'También hay un equivalente genérico disponible bajo pedido.',
+    source: 'Catálogo Motul.'
+  },
+  {
+    id: 'p11', category: 'frenos', sae: '—', jaso: '—', api: '—',
+    name: 'Líquido de frenos DOT 4',
+    brand: 'Marca por confirmar', presentation: 'Envase',
+    stock: 3, price: 280, cost: 180, liters: 'Envase',
+    compatible: ['Verificar especificación de cada moto'],
+    warning: 'Verifica la especificación requerida por tu motocicleta.',
+    suggestion: 'Marca aún por confirmar con el proveedor; cumple la especificación DOT 4.',
+    source: 'Especificaciones de fabricante.'
+  },
+  /* ===== Línea Maxima Racing Oils ===== */
+  {
+    id: 'p12', category: 'aceite', sae: '10W-40', jaso: 'MA2', api: 'SN PLUS',
+    name: 'Aceite sintético éster 10W-40 MA2/SN PLUS — 1 L',
+    brand: 'Maxima PRO PLUS+', presentation: 'Botella 1 L',
+    stock: 0, price: 750, cost: 520, liters: 'Según modelo (1,0 – 2,1 L)',
+    compatible: ['Suzuki Gixxer 150/160 (naked y SF)', 'Suzuki Gixxer 250 (naked y SF)', 'Yamaha FZ25 / XTZ 250', 'Yamaha YZF-R3', 'Yamaha MT-03 (321 cc)'],
+    warning: 'Verifica el grado OEM según el año de tu moto.',
+    source: 'Catálogo Maxima Racing Oils / listado JASO 2026.'
+  },
+  {
+    id: 'p13', category: 'aceite', sae: '10W-40', jaso: 'MA2', api: 'Verificar etiqueta',
+    name: 'Aceite semisintético éster 10W-40 MA2 — 1 L',
+    brand: 'Maxima SYN BLEND', presentation: 'Botella 1 L',
+    stock: 0, price: 480, cost: 330, liters: 'Según modelo (1,0 – 2,1 L)',
+    compatible: ['Suzuki Gixxer 150/160 (naked y SF)', 'Suzuki Gixxer 250 (naked y SF)', 'Yamaha FZ25 / XTZ 250', 'Yamaha YZF-R3', 'Yamaha MT-03 (321 cc)'],
+    warning: 'Confirma el API impreso en la etiqueta del envase.',
+    suggestion: 'Alternativa más económica a Maxima PRO PLUS+ para el mismo grado.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p14', category: 'aceite', sae: '10W-40', jaso: 'MA2', api: 'Verificar etiqueta',
+    name: 'Aceite mineral 10W-40 MA2 — 1 L',
+    brand: 'Maxima PREMIUM', presentation: 'Botella 1 L',
+    stock: 0, price: 350, cost: 230, liters: 'Según modelo (1,0 – 2,1 L)',
+    compatible: ['Suzuki Gixxer 150/160 (naked y SF)', 'Suzuki Gixxer 250 (naked y SF)', 'Yamaha FZ25 / XTZ 250', 'Yamaha YZF-R3', 'Yamaha MT-03 (321 cc)'],
+    warning: 'Verifica la versión de tu moto y el API impreso en la etiqueta.',
+    suggestion: 'Opción de entrada más accesible dentro de la línea Maxima.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p15', category: 'aceite', sae: '10W-30', jaso: 'MA2', api: 'SN PLUS',
+    name: 'Aceite sintético éster 10W-30 MA2/SN PLUS — 1 L',
+    brand: 'Maxima PRO PLUS+', presentation: 'Botella 1 L',
+    stock: 0, price: 760, cost: 530, liters: '1,5 L con filtro (CB300)',
+    compatible: ['Honda CB300F (2015-2016)', 'Honda CB300R (2021)'],
+    warning: 'Confirma el modelo y año de tu Honda antes de reservar.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p16', category: 'aceite', sae: '10W-30', jaso: 'MA2', api: 'Verificar etiqueta',
+    name: 'Aceite mineral 10W-30 MA2 — 1 L',
+    brand: 'Maxima PREMIUM', presentation: 'Botella 1 L',
+    stock: 0, price: 340, cost: 220, liters: '1,5 L con filtro (CB300)',
+    compatible: ['Honda CB300F (2015-2016)', 'Honda CB300R (2021)'],
+    warning: 'Confirma el modelo y año de tu Honda antes de reservar.',
+    suggestion: 'Opción de entrada más accesible dentro de la línea Maxima.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p17', category: 'aceite', sae: '20W-50', jaso: 'MA2', api: 'SN PLUS',
+    name: 'Aceite sintético éster 20W-50 MA2/SN PLUS — 1 L',
+    brand: 'Maxima PRO PLUS+', presentation: 'Botella 1 L',
+    stock: 0, price: 540, cost: 370, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG', 'Bajaj Pulsar NS160 UG'],
+    warning: 'Verifica la especificación API requerida por tu modelo.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p18', category: 'aceite', sae: '20W-50', jaso: 'MA2', api: 'Verificar etiqueta',
+    name: 'Aceite semisintético éster 20W-50 MA2 — 1 L',
+    brand: 'Maxima SYN BLEND', presentation: 'Botella 1 L',
+    stock: 0, price: 430, cost: 300, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG', 'Bajaj Pulsar NS160 UG'],
+    warning: 'El API impreso en la botella debe cumplir con el manual de tu moto.',
+    suggestion: 'Alternativa más económica a Maxima PRO PLUS+ para el mismo grado.',
+    source: 'Catálogo Maxima Racing Oils.'
+  },
+  {
+    id: 'p19', category: 'aceite', sae: '10W-50', jaso: 'MA2', api: 'SN PLUS',
+    name: 'Aceite sintético éster 10W-50 MA2/SN PLUS — 1 L',
+    brand: 'Maxima PRO PLUS+', presentation: 'Botella 1 L',
+    stock: 0, price: 770, cost: 540, liters: '1,2 L (servicio)',
+    compatible: ['Bajaj Pulsar NS200 UG (alternativa según manual)'],
+    warning: 'Disponibilidad condicional: solo si el manual de tu variante admite 10W-50.',
+    suggestion: 'No sustituyas el 20W-50 recomendado de fábrica sin validar con el manual OEM.',
+    source: 'Catálogo Maxima Racing Oils.'
+  }
+];
+let products = PRODUCTS.map(p => ({ ...p, reserved: 0 }));
+let reservations = JSON.parse(localStorage.getItem('motooil_reservations') || '[]');
+let adminOpen = false;
+
+function fmtMoney(n){ return `${STORE.currency} ${n.toLocaleString('es-NI')}`; }
+function genCode(){ return 'MO-' + Math.random().toString(36).slice(2, 8).toUpperCase(); }
+function escapeHtml(t){ return String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+function available(p){ return p.stock - (p.reserved || 0); }
+function saveReservations(){ localStorage.setItem('motooil_reservations', JSON.stringify(reservations)); }
+function saveProducts(){ localStorage.setItem('motooil_products', JSON.stringify(products)); }
+
+function init(){
+  products.forEach(p => {
+    p.reserved = reservations.filter(r => r.productId === p.id && r.status !== 'cancelado' && r.status !== 'recogido')
+      .reduce((s, r) => s + (r.qty || 1), 0);
+  });
+  renderFilters();
+  renderProducts();
+  renderMyReservations();
+  updateNavBadge();
+}
+
+function renderFilters(){
+  const brands = [...new Set(products.map(p => p.brand))].filter(Boolean);
+  const saes = [...new Set(products.map(p => p.sae))];
+  const selBrand = document.getElementById('filterBrand');
+  const selSAE = document.getElementById('filterSAE');
+  const curB = selBrand.value; const curS = selSAE.value;
+  selBrand.innerHTML = '<option>Todas las marcas</option>' + brands.map(b => `<option>${escapeHtml(b)}</option>`).join('');
+  selSAE.innerHTML = '<option>Todos los grados</option>' + saes.map(s => `<option>${escapeHtml(s)}</option>`).join('');
+  if (brands.includes(curB)) selBrand.value = curB; else selBrand.value = 'Todas las marcas';
+  if (saes.includes(curS)) selSAE.value = curS; else selSAE.value = 'Todos los grados';
+}
+
+function renderProducts(){
+  const grid = document.getElementById('productGrid');
+  const countEl = document.getElementById('catalogCount');
+  const badgeEl = document.getElementById('catalogBadge');
+  const q = (document.getElementById('searchInput') || { value: '' }).value.toLowerCase();
+  const brand = document.getElementById('filterBrand').value;
+  const sae = document.getElementById('filterSAE').value;
+  const stockF = document.getElementById('filterStock').value;
+  const list = products.filter(p => {
+    const hay = (p.name + ' ' + p.brand + ' ' + (p.compatible || []).join(' ') + ' ' + p.sae).toLowerCase().includes(q);
+    const bOk = brand === 'Todas las marcas' || p.brand === brand;
+    const sOk = sae === 'Todos los grados' || p.sae === sae;
+    const av = available(p);
+    const stOk = stockF === 'Todos' || (stockF === 'Solo disponibles' && av > 0) || (stockF === 'Ver agotados' && av === 0);
+    return hay && bOk && sOk && stOk;
+  });
+  grid.innerHTML = '';
+  if (list.length === 0) {
+    document.getElementById('emptyState').style.display = 'block';
+    countEl.textContent = '0 productos';
+    badgeEl.textContent = '';
+    return;
+  }
+  document.getElementById('emptyState').style.display = 'none';
+  countEl.textContent = `${list.length} producto${list.length !== 1 ? 's' : ''}`;
+  badgeEl.textContent = list.length > 0 ? `· ${list.length} encontrado${list.length !== 1 ? 's' : ''}` : '';
+  list.forEach(p => {
+    const av = available(p);
+    let stockClass = 'stock-ok', stockText = 'Disponible';
+    if (av === 0) { stockClass = 'stock-out'; stockText = 'Agotado · por encargo'; }
+    else if (av <= 3) { stockClass = 'stock-low'; stockText = `Últimas ${av}`; }
+    const disabled = av === 0 ? 'disabled' : '';
+    const btnText = av === 0 ? 'Sin stock' : 'Reservar';
+    const catLabel = p.category === 'aceite' ? 'Aceite' : p.category === 'cadena' ? 'Cadena' : 'Frenos';
+    const compatibleHtml = (p.compatible || []).map(m => `<span class="badge sae">${escapeHtml(m)}</span>`).join('');
+    grid.innerHTML += `
+      <article class="card" data-id="${escapeHtml(p.id)}">
+        <div class="thumb">${p.category === 'aceite' ? '🛢️' : p.category === 'cadena' ? '⛓️' : '🔧'}</div>
+        <div class="card-body">
+          <div class="badges">
+            <span class="badge cat">${escapeHtml(catLabel)}</span>
+            <span class="badge sae">SAE ${escapeHtml(p.sae)}</span>
+          </div>
+          <h3>${escapeHtml(p.name)}</h3>
+          <p class="brand">${escapeHtml(p.brand)} · ${escapeHtml(p.presentation)}</p>
+          <p class="compatible"><strong>Para:</strong> ${compatibleHtml}</p>
+          <div class="specs">
+            <span>JASO ${escapeHtml(p.jaso)}</span>
+            <span>API ${escapeHtml(p.api)}</span>
+            <span>${escapeHtml(p.liters)}</span>
+          </div>
+          <div class="price-row">
+            <span class="price">${fmtMoney(p.price)}</span>
+            <span class="stock-badge ${stockClass}">${stockText}</span>
+          </div>
+          <button class="btn btn-reserve" data-id="${escapeHtml(p.id)}" ${disabled}>${btnText}</button>
+          <p class="note">${escapeHtml(p.warning)}</p>
+          ${p.suggestion ? `<p class="suggestion">💡 ${escapeHtml(p.suggestion)}</p>` : ''}
+        </div>
+      </article>
+    `;
+  });
+  grid.querySelectorAll('button[data-id]').forEach(btn => {
+    btn.addEventListener('click', () => openReserve(btn.getAttribute('data-id')));
+  });
+}
+/* ==================== RESERVAS ==================== */
+
+function openReserve(id){
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const av = available(p);
+  document.getElementById('resProdId').value = p.id;
+  document.getElementById('resModalTitle').textContent = `Reservar · ${p.name}`;
+  document.getElementById('resThumb').textContent = p.category === 'aceite' ? '🛢️' : p.category === 'cadena' ? '⛓️' : '🔧';
+  document.getElementById('resPrice').textContent = fmtMoney(p.price);
+  document.getElementById('resStockBadge').textContent = av > 0 ? `Stock disponible: ${av}` : 'Sin stock disponible';
+  const qty = document.getElementById('resQty');
+  qty.max = av;
+  qty.value = Math.min(parseInt(qty.value || 1, 10), av) || 1;
+  document.getElementById('btnReserveConfirm').disabled = av === 0;
+  const today = new Date().toISOString().slice(0, 10);
+  document.getElementById('resDate').min = today;
+  if (!document.getElementById('resDate').value) document.getElementById('resDate').value = today;
+  openModal('reserveModal');
+}
+
+function openModal(modalId){
+  const el = document.getElementById(modalId);
+  el.style.display = 'flex';
+  el.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(modalId){
+  const el = document.getElementById(modalId);
+  el.style.display = 'none';
+  el.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('closeReserve').addEventListener('click', () => closeModal('reserveModal'));
+document.getElementById('backdropReserve').addEventListener('click', () => closeModal('reserveModal'));
+document.getElementById('closeConfirm').addEventListener('click', () => closeModal('confirmModal'));
+document.getElementById('backdropConfirm').addEventListener('click', () => closeModal('confirmModal'));
+
+document.getElementById('reserveForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const id = document.getElementById('resProdId').value;
+  const p = products.find(x => x.id === id);
+  const av = available(p);
+  const qty = Math.min(parseInt(document.getElementById('resQty').value || 1, 10), av);
+  if (!p || av === 0 || qty < 1) return;
+  const res = {
+    id: 'r' + Date.now(),
+    code: genCode(),
+    productId: p.id,
+    name: p.name,
+    price: p.price,
+    qty: qty,
+    total: p.price * qty,
+    customer: {
+      name: document.getElementById('resName').value.trim(),
+      phone: document.getElementById('resPhone').value.trim(),
+      email: document.getElementById('resEmail').value.trim()
+    },
+    pickup: {
+      date: document.getElementById('resDate').value,
+      time: document.getElementById('resTime').value,
+      notes: document.getElementById('resNotes').value.trim()
+    },
+    status: 'pendiente',
+    created: new Date().toISOString()
+  };
+  reservations.push(res);
+  saveReservations();
+  init();
+  closeModal('reserveModal');
+  showConfirm(res);
+});
+function showConfirm(res){
+  const p = products.find(x => x.id === res.productId);
+  document.getElementById('confCode').textContent = res.code;
+  document.getElementById('confDetails').innerHTML = `
+    <div class="confirm-row"><span>Producto</span><span class="val">${escapeHtml(p ? p.name : res.name)}</span></div>
+    <div class="confirm-row"><span>Cantidad</span><span class="val">${res.qty}</span></div>
+    <div class="confirm-row"><span>Total a pagar en tienda</span><span class="val">${fmtMoney(res.total)}</span></div>
+    <div class="confirm-row"><span>Recogida</span><span class="val">${res.pickup.date} ${res.pickup.time}</span></div>
+    <div class="confirm-row"><span>Cliente</span><span class="val">${escapeHtml(res.customer.name)}</span></div>
+    <div class="confirm-row"><span>Teléfono</span><span class="val">${escapeHtml(res.customer.phone)}</span></div>
+    <div class="confirm-row"><span>Tienda</span><span class="val">${STORE.address}</span></div>
+  `;
+  openModal('confirmModal');
+}
+
+document.getElementById('btnConfContinue').addEventListener('click', () => { closeModal('confirmModal'); });
+document.getElementById('btnConfMyReservations').addEventListener('click', () => {
+  closeModal('confirmModal');
+  showMyReservations();
+});
+
+function showMyReservations(){
+  document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+  document.getElementById('myReservationsSection').style.display = 'block';
+  const tbody = document.getElementById('resTableBody');
+  const none = document.getElementById('noReservations');
+  const mine = [...reservations].sort((a, b) => new Date(b.created) - new Date(a.created));
+  tbody.innerHTML = '';
+  if (mine.length === 0) { none.style.display = 'block'; return; }
+  none.style.display = 'none';
+  mine.forEach(r => {
+    const p = products.find(x => x.id === r.productId);
+    tbody.innerHTML += `
+      <tr>
+        <td><strong>${escapeHtml(r.code)}</strong></td>
+        <td>${escapeHtml(p ? p.name : r.name)}</td>
+        <td>${r.qty}</td>
+        <td>${fmtMoney(r.total)}</td>
+        <td>${escapeHtml(r.pickup.date)} ${escapeHtml(r.pickup.time)}</td>
+        <td><span class="status ${r.status}">${r.status === 'pendiente' ? 'Pendiente' : r.status === 'listo' ? 'Listo para recoger' : r.status === 'recogido' ? 'Recogido' : 'Cancelado'}</span></td>
+        <td><button class="btn btn-danger btn-sm" data-id="${escapeHtml(r.id)}" ${r.status === 'recogido' || r.status === 'cancelado' ? 'disabled' : ''}>Cancelar reserva</button></td>
+      </tr>
+    `;
+  });
+  tbody.querySelectorAll('button[data-id]').forEach(btn => {
+    btn.addEventListener('click', () => cancelReservation(btn.getAttribute('data-id')));
+  });
+}
+
+function cancelReservation(id){
+  const r = reservations.find(x => x.id === id);
+  if (!r || (r.status !== 'pendiente' && r.status !== 'listo')) return;
+  if (!confirm('¿Cancelar esta reserva? El producto quedará disponible nuevamente.')) return;
+  r.status = 'cancelado';
+  saveReservations();
+  init();
+  showMyReservations();
+}
+/* ==================== ADMIN ==================== */
+
+document.getElementById('adminLink').addEventListener('click', (e) => {
+  e.preventDefault();
+  if (adminOpen) { renderAdmin(); return; }
+  document.getElementById('adminLogin').style.display = 'block';
+  document.getElementById('adminDashboard').style.display = 'none';
+  document.getElementById('adminPin').value = '';
+  document.getElementById('adminError').style.display = 'none';
+  document.getElementById('adminPin').focus();
+});
+
+document.getElementById('btnAdminLogin').addEventListener('click', () => {
+  if (document.getElementById('adminPin').value === ADMIN_PIN) {
+    adminOpen = true;
+    document.getElementById('adminLogin').style.display = 'none';
+    document.getElementById('adminDashboard').style.display = 'block';
+    renderAdmin();
+  } else {
+    document.getElementById('adminError').style.display = 'block';
+  }
+});
+
+document.getElementById('btnAdminLogout').addEventListener('click', () => {
+  adminOpen = false;
+  document.getElementById('adminDashboard').style.display = 'none';
+  document.getElementById('adminLogin').style.display = 'block';
+  renderProducts();
+});
+
+function renderAdmin(){
+  const pend = reservations.filter(r => r.status === 'pendiente' || r.status === 'listo').length;
+  const picked = reservations.filter(r => r.status === 'recogido').length;
+  document.getElementById('statTotalRes').textContent = reservations.length;
+  document.getElementById('statPending').textContent = pend;
+  document.getElementById('statPicked').textContent = picked;
+  document.getElementById('statLowStock').textContent = products.filter(p => available(p) === 0).length;
+
+  const stbody = document.getElementById('stockTableBody');
+  stbody.innerHTML = '';
+  products.forEach(p => {
+    const av = available(p);
+    const klass = av === 0 ? 'stock-out' : av <= 3 ? 'stock-low' : 'stock-ok';
+    stbody.innerHTML += `
+      <tr>
+        <td>${escapeHtml(p.name)}</td>
+        <td>${p.stock}</td>
+        <td><span class="stock-badge ${klass}">${av}</span></td>
+        <td>${fmtMoney(p.price)}</td>
+        <td></td>
+      </tr>
+    `;
+  });
+
+  const atbody = document.getElementById('adminResTableBody');
+  atbody.innerHTML = '';
+  [...reservations].sort((a, b) => new Date(b.created) - new Date(a.created)).forEach(r => {
+    const p = products.find(x => x.id === r.productId);
+    const statusSel = `<select class="status-sel" data-id="${escapeHtml(r.id)}">
+      <option value="pendiente" ${r.status === 'pendiente' ? 'selected' : ''}>Pendiente</option>
+      <option value="listo" ${r.status === 'listo' ? 'selected' : ''}>Listo para recoger</option>
+      <option value="recogido" ${r.status === 'recogido' ? 'selected' : ''}>Recogido</option>
+      <option value="cancelado" ${r.status === 'cancelado' ? 'selected' : ''}>Cancelado</option>
+    </select>`;
+    atbody.innerHTML += `
+      <tr>
+        <td><strong>${escapeHtml(r.code)}</strong></td>
+        <td>${escapeHtml(r.customer ? r.customer.name : '')}</td>
+        <td>${escapeHtml(p ? p.name : r.name)}</td>
+        <td>${escapeHtml(r.pickup.date)} ${escapeHtml(r.pickup.time)}</td>
+        <td>${statusSel}</td>
+        <td></td>
+      </tr>
+    `;
+  });
+  atbody.querySelectorAll('.status-sel').forEach(sel => {
+    sel.addEventListener('change', (e) => {
+      const r = reservations.find(x => x.id === e.target.getAttribute('data-id'));
+      if (r) { r.status = e.target.value; saveReservations(); init(); renderAdmin(); renderProducts(); }
+    });
+  });
+}
+
+function updateNavBadge(){
+  const pending = reservations.filter(r => r.status === 'pendiente' || r.status === 'listo').length;
+  document.getElementById('adminLink').textContent = pending ? `Administrador (${pending})` : 'Administrador';
+}
+
+/* ==================== EVENTOS ==================== */
+document.getElementById('btnSearch').addEventListener('click', renderProducts);
+['filterBrand', 'filterSAE', 'filterStock'].forEach(id => {
+  document.getElementById(id).addEventListener('change', renderProducts);
+});
+document.getElementById('searchInput').addEventListener('input', renderProducts);
+document.getElementById('btnResetFilters').addEventListener('click', () => {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('filterBrand').value = 'Todas las marcas';
+  document.getElementById('filterSAE').value = 'Todos los grados';
+  document.getElementById('filterStock').value = 'Todos';
+  renderProducts();
+});
+document.getElementById('btnRestock').addEventListener('click', () => {
+  const p = products.find(x => x.id === document.getElementById('restockProduct').value);
+  const add = parseInt(document.getElementById('restockQty').value || 0, 10);
+  if (!p || add < 1) return;
+  p.stock += add;
+  saveProducts();
+  init();
+  renderAdmin();
+  renderProducts();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { closeModal('reserveModal'); closeModal('confirmModal'); }
+});
+
+/* Rellenar select de reabastecimiento y arrancar */
+(function bootstrap(){
+  const sel = document.getElementById('restockProduct');
+  sel.innerHTML = products.map(p => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name)}</option>`).join('');
+  init();
+})();
+
+</script>
+</body>
+</html>
